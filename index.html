@@ -1,362 +1,494 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portafolio QA Tester</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <meta name="copyright" content="MACode ID, https://www.macodeid.com/">
+  
+  <title>Virtual Folio - Portfolio Alicia Nicolas</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Arial, sans-serif;
-    }
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  
+  <link rel="stylesheet" type="text/css" href="assets/css/themify-icons.css">
+  
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 
-    body{
-      background:#0f172a;
-      color:white;
-      line-height:1.6;
-    }
-
-    header{
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      background:linear-gradient(135deg,#0f172a,#1e293b);
-      padding:20px;
-    }
-
-    .hero h1{
-      font-size:3rem;
-      margin-bottom:10px;
-    }
-
-    .hero span{
-      color:#38bdf8;
-    }
-
-    .hero p{
-      max-width:600px;
-      margin:auto;
-      color:#cbd5e1;
-    }
-
-    .btn{
-      display:inline-block;
-      margin-top:20px;
-      padding:12px 24px;
-      background:#38bdf8;
-      color:#0f172a;
-      text-decoration:none;
-      border-radius:8px;
-      font-weight:bold;
-      transition:0.3s;
-    }
-
-    .btn:hover{
-      background:white;
-    }
-
-    section{
-      padding:80px 10%;
-    }
-
-    h2{
-      text-align:center;
-      margin-bottom:40px;
-      color:#38bdf8;
-      font-size:2rem;
-    }
-
-    .about{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-      align-items:center;
-    }
-
-    .about img{
-      width:100%;
-      border-radius:12px;
-    }
-
-    .skills{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:20px;
-    }
-
-    .card{
-      background:#1e293b;
-      padding:20px;
-      border-radius:12px;
-      text-align:center;
-      transition:0.3s;
-    }
-
-    .card:hover{
-      transform:translateY(-5px);
-      background:#334155;
-    }
-
-    .projects{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:20px;
-    }
-
-    .project{
-      background:#1e293b;
-      border-radius:12px;
-      overflow:hidden;
-      transition:0.3s;
-    }
-
-    .project img{
-      width:100%;
-      height:200px;
-      object-fit:cover;
-    }
-
-    .project-content{
-      padding:20px;
-    }
-
-    .project:hover{
-      transform:scale(1.03);
-    }
-
-    .contact{
-      text-align:center;
-    }
-
-    form{
-      max-width:500px;
-      margin:auto;
-    }
-
-    input, textarea{
-      width:100%;
-      padding:12px;
-      margin:10px 0;
-      border:none;
-      border-radius:8px;
-    }
-
-    button{
-      width:100%;
-      padding:12px;
-      border:none;
-      border-radius:8px;
-      background:#38bdf8;
-      color:#0f172a;
-      font-weight:bold;
-      cursor:pointer;
-      transition:0.3s;
-    }
-
-    button:hover{
-      background:white;
-    }
-
-    footer{
-      text-align:center;
-      padding:20px;
-      background:#020617;
-      color:#94a3b8;
-    }
-
-    .hidden{
-      opacity:0;
-      transform:translateY(30px);
-      transition:all 0.8s ease;
-    }
-
-    .show{
-      opacity:1;
-      transform:translateY(0);
-    }
-
-    @media(max-width:768px){
-      .about{
-        grid-template-columns:1fr;
-      }
-
-      .hero h1{
-        font-size:2.2rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="assets/vendor/animate/animate.css">
+  
+  <link rel="stylesheet" type="text/css" href="assets/vendor/owl-carousel/owl.carousel.css">
+  
+  <link rel="stylesheet" type="text/css" href="assets/vendor/perfect-scrollbar/css/perfect-scrollbar.css">
+  
+  <link rel="stylesheet" type="text/css" href="assets/vendor/nice-select/css/nice-select.css">
+  
+  <link rel="stylesheet" type="text/css" href="assets/vendor/fancybox/css/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="assets/css/virtual.css">
+  
+  <link rel="stylesheet" type="text/css" href="assets/css/topbar.virtual.css">
 </head>
-
-<body>
-
-  <!-- HERO -->
-  <header>
-    <div class="hero">
-      <h1>Soy Alicia Nicolás y <span>soy QA</span></h1>
-      <p>
-        QA Manager con más de 20 años de experiencia en aseguramiento de calidad de software en sectores bancario, fintech, retail y gobierno.<br>
-<br>Especialista en QA Strategy, Test Management, QA Governance, automatización de pruebas, CI/CD y metodologías Agile/Scrum.<br>
-<br>Experiencia liderando equipos multidisciplinarios en proyectos críticos de alta complejidad, logrando reducción de hasta 98% en incidentes en producción, incremento en cobertura de pruebas, mayor estabilidad en releases y optimización de ciclos de entrega.<br>
-
-      </p>
-
-      <a href="mailto:nikhollas@hotmail.com" class="btn">Contáctame</a>
+<body class="theme-blue">
+  
+  <!-- Back to top button -->
+  <div class="btn-back_to_top">
+    <span class="ti-arrow-up"></span>
+  </div>
+  
+  <!-- Setting button -->
+  <div class="config">
+    <div class="template-config">
+      <!-- Settings -->
+      <div class="d-block">
+        <button class="btn btn-fab btn-sm" id="sideel" title="Settings"><span class="ti-settings"></span></button>
+      </div>
+     
     </div>
-  </header>
-
-  <!-- SOBRE MI -->
-  <section class="hidden">
-    <h2>Sobre Mí</h2>
-
-    <div class="about">
-      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="tester">
-
-      <div>
-        <p>
-          Soy QA Tester apasionado por asegurar la calidad del software.
-          Tengo experiencia realizando pruebas funcionales, regresión,
-          pruebas API y automatización con herramientas modernas.
-        </p>
-
-        <br>
-
-        <p>
-          Manejo metodologías ágiles, documentación de bugs y
-          seguimiento de incidencias utilizando Jira y TestRail.
-        </p>
+    <div class="set-menu">
+      <p>Select Color</p>
+      <div class="color-bar" data-toggle="selected">
+        <span class="color-item bg-theme-blue selected" data-class="theme-blue"></span>
+        <span class="color-item bg-theme-red" data-class="theme-red"></span>
+        <span class="color-item bg-theme-green" data-class="theme-green"></span>
+        <span class="color-item bg-theme-orange" data-class="theme-orange"></span>
+        <span class="color-item bg-theme-purple" data-class="theme-purple"></span>
       </div>
     </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section class="hidden">
-    <h2>Habilidades</h2>
-
-    <div class="skills">
-
-      <div class="card">
-        <h3>Testing Manual</h3>
-        <p>Casos de prueba, smoke test, regresión y exploratorio.</p>
-      </div>
-
-      <div class="card">
-        <h3>Automatización</h3>
-        <p>Selenium, Cucumber.</p>
-      </div>
-
-      <div class="card">
-        <h3>API Testing</h3>
-        <p>Postman, REST APIs y validaciones.</p>
-      </div>
-
-      <div class="card">
-        <h3>Bug Tracking</h3>
-        <p>Jira, Azure DevOps y documentación.</p>
-      </div>
-
-      <div class="card">
-        <h3>Análisis de requerimientos</h3>
-        <p>Casos de uso, épicas, historias de usuario.</p>
-      </div>
-
-      <div class="card">
-        <h3>Reingeniería de procesos</h3>
-        <p>Análisis de brechas, implementación de procesos</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PROYECTOS -->
-  <section class="hidden">
-    <h2>Proyectos</h2>
-
-    <div class="projects">
-
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1200&auto=format&fit=crop" alt="proyecto">
-
-        <div class="project-content">
-          <h3>Testing Digital</h3>
-          <p>
-            Automatización de pruebas web para promociones de marca con Selenium.
-          </p>
+  </div>
+  
+  <div class="vg-page page-home" id="home" style="background-image: url(assets/img/bg_image_1.jpg)">
+    <!-- Navbar -->
+    <div class="navbar navbar-expand-lg navbar-dark sticky" data-offset="500">
+      <div class="container">
+        <a href="" class="navbar-brand">V-Folio</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navbar" aria-expanded="true">
+          <span class="ti-menu"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-navbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a href="#home" class="nav-link" data-animate="scrolling">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link" data-animate="scrolling">Acerca de</a>
+            </li>
+            <li class="nav-item">
+              <a href="#portfolio" class="nav-link" data-animate="scrolling">Portafolio</a>
+            </li>
+          
+            <li class="nav-item">
+              <a href="#contact" class="nav-link" data-animate="scrolling">Contacto</a>
+            </li>
+          </ul>
+          
         </div>
       </div>
-
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="proyecto">
-
-        <div class="project-content">
-          <h3>API Validation</h3>
-          <p>
-            Validación de APIs REST usando Postman.
-          </p>
+    </div> <!-- End Navbar -->
+    <!-- Caption header -->
+    <div class="caption-header text-center wow zoomInDown">
+      <h5 class="fw-normal">Bienvenido</h5>
+      <h1 class="fw-light mb-4">Soy<b class="fg-theme"> Alicia</b> Nicolás</h1>
+      <div class="badge">QA Manager/Test Lead</div>
+    </div> <!-- End Caption header -->
+    <div class="floating-button"><span class="ti-mouse"></span></div>
+  </div>
+  
+  <div class="vg-page page-about" id="about">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-4 py-3">
+          <div class="img-place wow fadeInUp">
+            <img src="assets/img/person.jpeg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-1 wow fadeInRight">
+          <h1 class="fw-light">Alicia Nicolás</h1>
+          <h5 class="fg-theme mb-3">QA Manager/Test Lead</h5>
+          <p class="text-muted"><br>QA Manager con más de 20 años de experiencia liderando aseguramiento de calidad de software en sectores bancario, fintech, retail y gobierno.<br>
+<br>He dirigido equipos multidisciplinarios en proyectos críticos de alta complejidad, enfocado en estabilidad de releases, reducción de riesgos en producción y mejora continua de procesos de calidad.<br>
+<br>He logrado reducir incidentes en producción hasta en 98%, incrementar la cobertura de pruebas en flujos críticos y optimizar los ciclos de entrega en entornos empresariales de alta demanda.<br>
+<br>Especialista en Servicios de Pruebas con sólida experiencia en diseño, ejecución y automatización de pruebas funcionales, de integración y de regresión. Competente en elaboración de planes de prueba, creación de casos y escenarios, gestión de ambientes de pruebas y seguimiento de incidencias usando herramientas de seguimiento <br>
+</p>
+          <ul class="theme-list">
+            <li><b>From:</b> México, CDMX</li>
+            <li><b>Lives In:</b> México, CDMX</li>
+            <li><b>Gender:</b> Female</li>
+          </ul>
+          <a href="assets/docs/Alicia_Nicolas_QAManager_Resumen.pdf" download="Alicia_Nicolas_QAManager_Resumen.pdf" class="btn btn-theme-outline" target="_blank">Download CV</a>
         </div>
       </div>
-
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?q=80&w=1200&auto=format&fit=crop" alt="proyecto">
-
-        <div class="project-content">
-          <h3>Mobile App QA</h3>
-          <p>
-            Pruebas funcionales en Android/IOS yreportes de bugs en aplicaciones móviles.
-          </p>
-        </div>
-      </div>
-
     </div>
-  </section>
+    <div class="container py-5">
+      <h1 class="text-center fw-normal wow fadeIn">Habilidades</h1>
+      <div class="row py-3">
+        <div class="col-md-6">
+          <div class="px-lg-3">
+            <h4 class="wow fadeInUp">Habilidades</h4>
+            <div class="progress-wrapper wow fadeInUp">
+              <span class="caption">QA Strategy & Governance</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 86%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">86%</div>
+              </div>
+            </div>
+            <div class="progress-wrapper wow fadeInUp">
+              <span class="caption">Risk & Release Management</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">80%</div>
+              </div>
+            </div>
+            <div class="progress-wrapper wow fadeInUp">
+              <span class="caption">Quality Assurance Process Improvement</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">100%</div>
+              </div>
+            </div>
+            <div class="progress-wrapper wow fadeInUp">
+              <span class="caption">Testing Functional</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">90%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="px-lg-3">
+            <h4 class="wow fadeInUp">Analisys Requirements</h4>
+            <div class="progress-wrapper wow fadeInUp">
+              <span class="caption">UI / UX Analisys</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 92%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">92%</div>
+              </div>
+            </div>
+            <div class="progress-wrapper wow fadeInUp">
+              <span class="caption">Web and mobile testing</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 99%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">99%</div>
+              </div>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container pt-5">
+      <div class="row">
+        <div class="col-md-6 wow fadeInRight">
+          <h2 class="fw-normal">Educación</h2>
+          <ul class="timeline mt-4 pr-md-5">
+            <li>
+              <div class="title">2000-2004</div>
+              <div class="details">
+                <h5>Carrera</h5>
+                <small class="fg-theme">IPN UPIICSA</small>
+                <p>Lic. en Ciencias de la Informática</p>
+              </div>
+            </li>
+            <li>
+              <div class="title">1999-2000</div>
+              <div class="details">
+                <h5>Carrera</h5>
+                <small class="fg-theme">IPN UPIICSA</small>
+                <p>Estudios complementarios de Lic. Administración Industrial</p>
+              </div>
+            </li>
+            
+          </ul>
+        </div>
+        <div class="col-md-6 wow fadeInRight" data-wow-delay="200ms">
+          <h2 class="fw-normal">Experiencia</h2>
+          <ul class="timeline mt-4 pr-md-5">
+            <li>
+              <div class="title">Nov 2024 - Abril 2026</div>
+              <div class="details">
+                <h5>QA MANAGER</h5>
+                <small class="fg-theme">PACTO TECHNOLOGY MEXICO</small>
+                <p><br>Reducción del 98% en incidentes en producción mediante implementación de estrategia preventiva de QA y mejora de procesos de validación.
+<br>Incremento del 100% en cobertura funcional en flujos críticos del negocio, mejorando estabilidad de releases.<br>
+<br>Implementación de automatización de pruebas integrada en pipelines CI/CD, reduciendo ciclos de validación y acelerando entregas.<br>
+<br>Definición de estrategia QA para aplicaciones web, Android y sistemas POS.<br>
+<br>Implementación de dashboards de métricas QA para toma de decisiones ejecutivas.<br>
+<br>Liderazgo de equipos multidisciplinarios bajo Agile/Scrum, alineando QA con objetivos de negocio.<br>
+<br>Gestión del ciclo de vida de defectos en releases productivos, reduciendo riesgos en producción.<br>
+<br>Identificación de riesgos críticos y optimización continua del proceso de calidad.<br>
+</p>
+              </div>
+            </li>
+            <li>
+              <div class="title">2007 - 2024</div>
+              <div class="details">
+                <h5>Test Lead/Test Manager</h5>
+                <small class="fg-theme">Publicis Groupe, Ondore SAPI de CV, Scotiabank, HSBC, Deloitte (TSJF), Health Digital Systems, IBM, EDS and HP Company.
+</small>
+<p>
+<br>Lideré equipos QA en proyectos simultáneos en sectores financiero, retail y gobierno.<br>
+<br>Diseñé estrategias de pruebas funcionales, regresión, integración, performance y volumen.<br>
+<br>Implementé automatización de pruebas para mejorar eficiencia y cobertura.<br>
+<br>Definí KPIs de calidad y reportes ejecutivos para stakeholders.<br>
+<br>Gestioné defectos en entornos productivos críticos, asegurando estabilidad de releases.<br>
+<br>Ejecuté pruebas UAT y validación de requerimientos de negocio.<br>
+<br>Realicé pruebas de APIs e integración de sistemas empresariales.<br>
+<br>Colaboré con UX/UI para mejorar la experiencia del usuario final.<br>
+<br>Mejoré procesos QA bajo metodologías Agile y Waterfall.<br>
+</p>
+              </div>
+            </li>
+            <li>
+              <div class="title">2003 - 2007</div>
+              <div class="details">
+                <h5>QA Analyst/Ingeniero de Pruebas Jr/QA Senior</h5>
+                <small class="fg-theme">SAT, CONAGUA, Nextel, Novartis, Softtek, Getronics</small>
+                <p><br>Diseño y ejecución de pruebas funcionales y de regresión.<br>
+<br>Apoyo en la implementación inicial de automatización de pruebas.<br>
+<br>Colaboración con equipos de desarrollo y negocio en levantamiento de requerimientos.<br>
+<br>Ejecución de pruebas en sistemas web y empresariales.<br>
+</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="vg-page page-service">
+    <div class="container">
+      <div class="text-center wow fadeInUp">
+        <div class="badge badge-subhead">Servicios</div>
+      </div>
+      <h1 class="fw-normal text-center wow fadeInUp">Qué hacemos?</h1>
+      <div class="row mt-5">
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="card card-service wow fadeInUp">
+            <div class="icon">
+              <span class="ti-paint-bucket"></span>
+            </div>
+            <div class="caption">
+              <h4 class="fg-theme">Testing Funcional</h4>
+              <p>
+<li>Planificación de pruebas</li>
+<li>Diseño de casos de prueba</li>
+<li>Pruebas funcionales</li>
+<li>Pruebas de interfaz de usuario (UI/UX)</li>
+<li>Pruebas de compatibilidad</li>
+<li>Pruebas móviles</li>
+<li>Pruebas automatizadas</li>
+<li>Pruebas de regresión</li>
+<li>Pruebas de aceptación de usuario (UAT)</li>
+</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="card card-service wow fadeInUp">
+            <div class="icon">
+              <span class="ti-search"></span>
+            </div>
+            <div class="caption">
+              <h4 class="fg-theme">Análisis de requerimientos</h4>
+              <p><li>Análisis de ambigüedades</li>
+                <li>Análisis de alcance</li>
+<li>Análisis de casos de uso</li>
+<li>Análisis de cobertura de pruebas</li>
+<li>Análisis de integración</li>
+<li>Análisis de experiencia de usuario (UX)</li>
+<li>Análisis de compatibilidad</li>
+<li>Detección de vulnerabilidades y riesgos de protección de datos</li>
+<li>Análisis de defectos</li>
+<li>Análisis de impacto de cambios</li>
+<li>Análisis de resultados y métricas</li>
+<li>Interpretación de indicadores de calidad y desempeño del sistema</li>
+<li>Validación final para asegurar estabilidad antes del lanzamiento
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="card card-service wow fadeInUp">
+            <div class="icon">
+              <span class="ti-vector"></span>
+            </div>
+            <div class="caption">
+              <h4 class="fg-theme">Testing Automatizado</h4>
+              <li>Selenium</li>
+              <li>Cucumber</li>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="card card-service wow fadeInUp">
+            <div class="icon">
+              <span class="ti-desktop"></span>
+            </div>
+            <div class="caption">
+              <h4 class="fg-theme">Ingeniería de procesos</h4>
+              <li>Levantamiento y documentación de procesos</li>
+              <li>Análisis y optimización de procesos</li>
+              <li>Estandarización de procedimientos</li>
+              <li>Diseño de indicadores (KPIs)</li>
+              <li>Gestión de calidad y mejora continua</li>
+              <li>Análisis de riesgos operativos</li>
+              <li>Gestión del cambio</li>
+              <li>Optimización de tiempos y recursos</li>
+              <li>Elaboración de procedimientos, instructivos y diagramas de flujo.</li>
+              <li>Formación de equipos en procesos, herramientas y buenas prácticas.</li>
+              <li>Auditoría y evaluación de procesos</li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="vg-page page-funfact" style="background-image: url(assets/img/bg_banner.jpg);">
+    <div class="container">
+      <div class="row section-counter">
+        <div class="col-md-6 col-lg-4 py-4 wow fadeIn">
+          <h1 class="number" data-number="22">22</h1>
+          <span>Clientes</span>
+        </div>
+        <div class="col-md-6 col-lg-4 py-4 wow fadeIn">
+          <h1 class="number" data-number="22">22</h1>
+          <span>Proyectos Completados</span>
+        </div>
+      
+        <div class="col-md-6 col-lg-4 py-4 wow fadeIn">
+          <h1 class="number percentage" data-number="100">100</h1>
+          
+          <span>Satisfacción del Cliente</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Portfolio page -->
+  <div class="vg-page page-portfolio" id="portfolio">
+    <div class="container">
+      <div class="text-center wow fadeInUp">
+        <div class="badge badge-subhead">Portafolio</div>
+      </div>
+      <h1 class="text-center fw-normal wow fadeInUp">Proyectos descatacados</h1>
+      <div class="filterable-button py-3 wow fadeInUp" data-toggle="selected">
+        <button class="btn btn-theme-outline selected" data-filter="*">All</button>
+        <button class="btn btn-theme-outline" data-filter=".apps">Apps</button>
+        <button class="btn btn-theme-outline" data-filter=".dash">Dash</button>
+        <button class="btn btn-theme-outline" data-filter=".process">Procesos</button>
+        <button class="btn btn-theme-outline" data-filter=".analisis">Análisis</button>
+      </div>
 
-  <!-- CONTACTO 
-  <section id="contacto" class="contact hidden">
-    <h2>Contacto</h2>
+      <div class="gridder my-3">
+      <div class="grid-item template apps wow zoomIn">
+          <div class="img-place" data-src="assets/img/work/work-2.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Music App</h5> <p>Musics</p>">
+            <img src="assets/img/work/work-2.jpeg" alt="">
+            <div class="img-caption">
+              <h5 class="fg-theme">Aplicaciones Web</h5>
+              <p>Apps web</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item dash wow zoomIn">
+          <div class="img-place" data-src="assets/img/work/work-3.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Gaming Dashboard</h5> <p>Games, Streaming</p>">
+            <img src="assets/img/work/work-3.jpeg" alt="">
+            <div class="img-caption">
+              <h5 class="fg-theme">Dashboards de avance</h5>
+              <p>Métricas</p>
+              <p>KPIs</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item process wow zoomIn">
+          <div class="img-place" data-src="assets/img/work/work-4.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Drugs Delivery App</h5> <p>Health, Drugs</p>">
+            <img src="assets/img/work/work-4.jpeg" alt="">
+            <div class="img-caption">
+              <h5 class="fg-theme">Procesos</h5>
+              <p>Reingeniería de procesos</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item analisis wow zoomIn">
+          <div class="img-place" data-src="assets/img/work/work-5.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Musics Discover</h5> <p>Musics, Dashboard</p>">
+            <img src="assets/img/work/work-5.png" alt="">
+            <div class="img-caption">
+              <h5 class="fg-theme">Análisis de requerimientos</h5>
+              <p>Historias de usuario, épicas, CU</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item apps wow zoomIn">
+          <div class="img-place" data-src="assets/img/work/work-6.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Game Streaming</h5> <p>Games, Streaming</p>">
+             <img src="assets/img/work/work-1.webp" alt="">
+            <div class="img-caption">
+              <h5 class="fg-theme">Apps móviles</h5>
+              <p>Banca, Terminal de venta</p>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End gridder -->
+    </div>
+  </div> <!-- End Portfolio page -->
+  
+  
+  
+  <!-- Footer -->
+  <div class="vg-footer">
+    <h1 class="text-center">Contáctame</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 py-3">
+          <div class="footer-info">
+            <p>Me encuentro en:</p>
+            <hr class="divider">
+            <p class="fs-large fg-white">Ciudad de México, Iztapalapa</p>
+          </div>
+        </div>
 
-    <form id="contactForm">
-      <input type="text" placeholder="Tu nombre" required>
-      <input type="email" placeholder="Tu correo" required>
-      <textarea rows="5" placeholder="Tu mensaje"></textarea>
+        <div class="col-md-6 col-lg-6 py-3" id="contact"> 
+          <div class="float-lg-right">
+            <p>Contacto</p>
+            <hr class="divider">
+            <ul class="list-unstyled">
+              <li>alicia.nicolas2109@gmail.com</li>
+              <li>+52 5537228862</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+     
+       
+        <div class="col-12">
+          <p class="text-center mb-0 mt-4">Copyright &copy;2020. All right reserved | This template is made with <span class="ti-heart fg-theme-red"></span> by <a href="https://www.macodeid.com/">MACode ID</a></p>
+        </div>
+      </div>
+    </div>
+  </div> <!-- End footer -->
+  
+  
+  <script src="assets/js/jquery-3.5.1.min.js"></script>
+    
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+    
+  <script src="assets/vendor/owl-carousel/owl.carousel.min.js"></script>
+    
+  <script src="assets/vendor/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    
+  <script src="assets/vendor/isotope/isotope.pkgd.min.js"></script>
+    
+  <script src="assets/vendor/nice-select/js/jquery.nice-select.min.js"></script>
+    
+  <script src="assets/vendor/fancybox/js/jquery.fancybox.min.js"></script>
 
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
-  -->
+  <script src="assets/vendor/wow/wow.min.js"></script>
 
-  <footer>
-    <p>© 2026 - Portafolio Alicia Nicolas QA Tester</p>
-  </footer>
+  <script src="assets/vendor/animateNumber/jquery.animateNumber.min.js"></script>
 
-  <script>
-    // Animación al hacer scroll
-    const hiddenElements = document.querySelectorAll('.hidden');
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
 
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-        }
-      });
-    });
+  <script src="assets/js/google-maps.js"></script>
+    
+  <script src="assets/js/topbar-virtual.js"></script>
 
-    hiddenElements.forEach(el => observer.observe(el));
-
-    // Formulario
-    const form = document.getElementById('contactForm');
-
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-
-      alert('Mensaje enviado correctamente ✅');
-
-      form.reset();
-    });
-  </script>
-
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
+  
 </body>
 </html>
